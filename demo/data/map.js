@@ -1,10 +1,11 @@
 let data = [
-  {name: '杭州', value: 84},
-  {name: '北京', value: 154}
+  {name: 'Hangzhou', value: 10},
+  {name: 'Seattle', value: 20}
 ]
 const geoCoordMap = {
-  '杭州': [120.19, 30.26],
-  '北京': [116.4, 39.9]
+  'Hangzhou': [120.19, 30.26],
+  'Seattle': [47.36, 122.20]
+
 }
 
 function convertData (data) {

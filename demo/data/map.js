@@ -4,7 +4,7 @@ let data = [
 ]
 const geoCoordMap = {
   'Hangzhou': [120.19, 30.26],
-  'Seattle': [47.36, 122.20]
+  'Seattle': [122.20, 47.36]
 
 }
 
@@ -71,7 +71,7 @@ export default {
       type: 'scatter',
       coordinateSystem: 'geo',
       data: convertData(data),
-      symbolSize: val => val[2] / 10,
+      symbolSize: val => val[2],
       label: {
         normal: {
           formatter: '{b}',
@@ -94,7 +94,7 @@ export default {
       coordinateSystem: 'geo',
       data: convertData(data.sort((a, b) => b.value - a.value).slice(0, 6)),
       // data: convertData(data),
-      symbolSize: val => val[2] / 10,
+      symbolSize: val => val[2],
       showEffectOn: 'render',
       rippleEffect: {
         brushType: 'stroke'

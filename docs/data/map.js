@@ -4,7 +4,7 @@ let data = [
 ]
 const geoCoordMap = {
   'Hangzhou': [120.19, 30.26],
-  'Seattle': [122.20, 47.36]
+  'Seattle': [47.36, 122.20]
 
 }
 

@@ -1,11 +1,25 @@
 let data = [
   {name: 'Hangzhou', value: 10},
-  {name: 'Seattle', value: 20}
+  {name: 'Seattle', value: 20},
+  {name: 'Jining', value: 30},
+  {name: 'Qingdao', value: 40},
+  {name: 'Shanghai', value: 50},
+  {name: 'Shenzhen', value: 999},
+  {name: 'Beijing', value: 1099},
+  {name: 'Nanning', value: 1109},
+  {name: 'QingDao', value: 1119}
 ]
+
 const geoCoordMap = {
   'Hangzhou': [120.19, 30.26],
-  'Seattle': [-122.20, 47.36]
-
+  'Seattle': [-122.20, 47.36],
+  'Jining': [116.58, 35.41],
+  'Qingdao': [120.38, 36.06],
+  'Shanghai': [121.47, 31.23],
+  'Shenzhen': [114.05, 22.54],
+  'Beijing': [116.40, 39.90],
+  'Nanning': [108.36, 22.81],
+  'QingDao': [120.30, 36.00]
 }
 
 function convertData (data) {
@@ -71,7 +85,7 @@ export default {
       type: 'scatter',
       coordinateSystem: 'geo',
       data: convertData(data),
-      symbolSize: val => val[2],
+      symbolSize: val => val[2] >= 30 ? val[2] / 100 : val[2],
       label: {
         normal: {
           formatter: '{b}',
@@ -94,7 +108,7 @@ export default {
       coordinateSystem: 'geo',
       data: convertData(data.sort((a, b) => b.value - a.value).slice(0, 6)),
       // data: convertData(data),
-      symbolSize: val => val[2],
+      symbolSize: val => val[2] >= 30 ? val[2] / 100 : val[2],
       showEffectOn: 'render',
       rippleEffect: {
         brushType: 'stroke'
